@@ -445,13 +445,37 @@
            BIGGER LOGO
         ====================== */
         
-        .big-logo {
-            width: 52px;
-            height: 52px;
+        .huge-logo {
+            width: 82px;
+            height: 82px;
         
-            border-radius: 16px;
+            border-radius: 22px;
         
             transition: 0.3s;
+        
+            box-shadow: 0 10px 30px rgba(0,212,255,0.18);
+        }
+        
+        .huge-logo:hover {
+            transform: scale(1.04);
+        }
+        
+        .brand-name {
+            display: flex;
+            flex-direction: column;
+        
+            line-height: 1;
+        }
+        
+        .brand-name span {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .brand-name small {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 6px;
         }
         
         .big-logo:hover {
@@ -640,7 +664,7 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-        
+
         }
     </style>
 </head>
@@ -649,6 +673,41 @@
 
     <!-- NAVBAR -->
 
+    <nav class="navbar">
+    
+        <a href="#top" class="brand">
+            <img src="logo.png" class="logo huge-logo">
+    
+            <div class="brand-name">
+                <span>Nxco-ch</span>
+                <small>Medical AI</small>
+            </div>
+        </a>
+    
+        <div class="nav-links">
+            <a href="#about">
+                <i class="fas fa-user"></i>
+                About Me
+            </a>
+    
+            <a href="#doing">
+                <i class="fas fa-brain"></i>
+                Research
+            </a>
+    
+            <a href="#publications">
+                <i class="fas fa-book"></i>
+                Publications
+            </a>
+    
+            <a href="#contact">
+                <i class="fas fa-envelope"></i>
+                Contact
+            </a>
+        </div>
+    
+    </nav>
+    ```html
     <nav class="navbar">
     
         <a href="#top" class="brand">
@@ -688,20 +747,16 @@
 
             <div class="buttons">
 
-                <div class="buttons">
-
-                    <a href="#doing" class="btn-primary">
-                        <i class="fas fa-brain"></i>
-                        Explore Research
-                    </a>
-                
-                    <a href="#contact" class="btn-secondary">
-                        <i class="fas fa-envelope"></i>
-                        Contact
-                    </a>
-                
-                </div>
-
+                <a href="#doing" class="btn-primary">
+                    <i class="fas fa-brain"></i>
+                    Explore Research
+                </a>
+            
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
+            
             </div>
 
         </div>
@@ -786,24 +841,65 @@
 
         <section class="section">
 
-            <h2>Education</h2>
-
-            <div class="card">
-                Medical School — Strasbourg
+            <h2>
+                <i class="fas fa-graduation-cap"></i>
+                Education
+            </h2>
+        
+            <div class="timeline">
+        
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+        
+                    <div class="timeline-content">
+                        <h3>Medical School — Strasbourg</h3>
+                        <p class="muted">2022 — Present</p>
+                    </div>
+                </div>
+        
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+        
+                    <div class="timeline-content">
+                        <h3>AI & Deep Learning Training</h3>
+                        <p class="muted">Medical imaging & multimodal systems</p>
+                    </div>
+                </div>
+        
             </div>
-
+        
         </section>
-
         <!-- WORK -->
-
+        
         <section class="section">
-
-            <h2>Work & Research Experience</h2>
-
-            <div class="card">
-                AI Research Intern — Hospital Lab
+        
+            <h2>
+                <i class="fas fa-briefcase"></i>
+                Work & Research Experience
+            </h2>
+        
+            <div class="timeline">
+        
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+        
+                    <div class="timeline-content">
+                        <h3>AI Research Intern — Hospital Lab</h3>
+                        <p class="muted">Clinical AI systems & radiology research</p>
+                    </div>
+                </div>
+        
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+        
+                    <div class="timeline-content">
+                        <h3>Multimodal AI Research</h3>
+                        <p class="muted">Medical vision-language models</p>
+                    </div>
+                </div>
+        
             </div>
-
+        
         </section>
 
         <!-- SKILLS -->
@@ -835,30 +931,95 @@
 
         </section>
 
-        <!-- PUBLICATIONS -->
-
+        <!-- NEWS -->
+        
         <section class="section">
 
-            <h2>Publications</h2>
+            <h2>
+                <i class="fas fa-bolt"></i>
+                News
+            </h2>
+        
+            <div class="news-grid">
+        
+                <div class="news-card">
+        
+                    <img src="news1.jpg" class="news-image">
+        
+                    <div class="news-content">
+                        <h3>Paper accepted at MICCAI 2026</h3>
+                        <p class="muted">
+                            New work on multimodal AI systems for radiology.
+                        </p>
+                    </div>
+        
+                </div>
+        
+                <div class="news-card">
+        
+                    <img src="news2.jpg" class="news-image">
+        
+                    <div class="news-content">
+                        <h3>Conference Presentation</h3>
+                        <p class="muted">
+                            Presenting clinical AI research in Strasbourg.
+                        </p>
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </section>
+            <!-- PUBLICATIONS -->
 
-            <p class="muted">
-                Coming soon...
-            </p>
-
+        <section class="section" id="publications">
+        
+            <h2>
+                <i class="fas fa-book"></i>
+                Publications
+            </h2>
+        
+            <div class="publication-card">
+        
+                <img src="publication.jpg" class="publication-image">
+        
+                <div>
+                    <h3>
+                        Multimodal Clinical Intelligence for Radiology
+                    </h3>
+        
+                    <p class="muted">
+                        Your Name, Author 2, Author 3
+                    </p>
+        
+                    <p class="muted">
+                        2026 · MICCAI Conference
+                    </p>
+        
+                    <a href="#" class="paper-link">
+                        <i class="fas fa-file"></i>
+                        Read Paper
+                    </a>
+                </div>
+        
+            </div>
+        
         </section>
 
         <!-- CONTACT -->
         <section class="section contact-section" id="contact">
-        
-            <h2>Contact</h2>
+
+            <h2>
+                <i class="fas fa-envelope"></i>
+                Contact
+            </h2>
         
             <div class="contact-grid">
         
-                <!-- LEFT -->
-        
                 <div class="contact-info">
         
-                    <img src="profile.jpg" class="contact-profile">
+                    <img src="profile.jpg" class="contact-profile large-profile">
         
                     <h3>Your Name</h3>
         
@@ -891,14 +1052,24 @@
                         </a>
         
                         <a href="#">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+        
+                        <a href="#">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+        
+                        <a href="#">
                             <i class="fas fa-envelope"></i>
+                        </a>
+        
+                        <a href="#">
+                            <i class="fab fa-researchgate"></i>
                         </a>
         
                     </div>
         
                 </div>
-        
-                <!-- RIGHT -->
         
                 <div>
         
