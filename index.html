@@ -1,248 +1,678 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="logo.png" type="image/png">
-<title>Nxco-ch</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-/* =======================
-   DARK MEDICAL AI STYLE
-======================= */
+    <!-- TITLE + FAVICON -->
+    <title>🧬 Nxco-ch | Medical AI</title>
+    <link rel="icon" href="logo.png" type="image/png">
 
-:root {
-    --bg: #05070f;
-    --card: rgba(255,255,255,0.05);
-    --text: #eaeef5;
-    --muted: #8a93a5;
-    --accent: #00d4ff;
-    --accent2: #7c3aed;
-}
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-body {
-    margin: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-/* HERO */
-header {
-    background: radial-gradient(circle at top, #0b1220, #05070f);
-    text-align: center;
-    padding: 80px 20px;
-}
+    <!-- ICONS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-.profile-img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 2px solid var(--accent);
-    object-fit: cover;
-    margin-bottom: 20px;
-}
+    <meta name="theme-color" content="#05070f">
 
-/* CONTAINER */
-.container {
-    max-width: 950px;
-    margin: auto;
-    padding: 20px;
-}
+    <style>
+        :root {
+            --bg: #05070f;
+            --card: rgba(255, 255, 255, 0.04);
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --accent: #00d4ff;
+            --accent2: #7c3aed;
+        }
 
-/* SECTION CARD */
-.section {
-    margin: 40px 0;
-    padding: 25px;
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-    transition: 0.3s;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-.section:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* TITLES */
-h2 {
-    color: var(--accent);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-}
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(0, 212, 255, 0.15), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.15), transparent 30%),
+                var(--bg);
 
-h1 {
-    font-size: 40px;
-    margin: 10px 0;
-}
+            color: var(--text);
+            overflow-x: hidden;
+        }
 
-.muted {
-    color: var(--muted);
-}
+        /* ======================
+           NAVBAR
+        ====================== */
 
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 15px;
-}
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 24px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-/* CARD */
-.card {
-    padding: 15px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
-}
+            backdrop-filter: blur(14px);
+            background: rgba(5, 7, 15, 0.55);
 
-/* WHAT IM DOING */
-.card b {
-    color: white;
-}
+            border-bottom: 1px solid rgba(255,255,255,0.05);
 
-/* SKILLS */
-.skill {
-    margin: 10px 0;
-}
+            z-index: 999;
+        }
 
-.bar {
-    height: 6px;
-    background: #222;
-    border-radius: 10px;
-    overflow: hidden;
-}
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
 
-.bar div {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-}
+            font-weight: 700;
+            font-size: 18px;
+        }
 
-/* CONTACT */
-.contact {
-    text-align: center;
-}
+        .logo {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+        }
 
-.social a {
-    color: var(--accent);
-    font-size: 20px;
-    margin: 0 10px;
-}
-</style>
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
 
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* ======================
+           HERO
+        ====================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+
+            padding: 120px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            z-index: 5;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            border-radius: 999px;
+
+            background: rgba(255,255,255,0.05);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            color: var(--accent);
+
+            font-size: 13px;
+
+            margin-bottom: 28px;
+
+            backdrop-filter: blur(12px);
+        }
+
+        .hero h1 {
+            font-size: 82px;
+            line-height: 0.95;
+
+            margin: 0;
+
+            letter-spacing: -5px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            margin-top: 30px;
+
+            font-size: 20px;
+            color: var(--muted);
+
+            line-height: 1.7;
+        }
+
+        /* ======================
+           BUTTONS
+        ====================== */
+
+        .buttons {
+            margin-top: 45px;
+
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+
+            padding: 14px 24px;
+
+            border-radius: 14px;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            border: none;
+
+            background: linear-gradient(90deg,
+                    var(--accent),
+                    var(--accent2));
+
+            color: white;
+
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* ======================
+           GLOW
+        ====================== */
+
+        .glow {
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(120px);
+            opacity: 0.3;
+        }
+
+        .g1 {
+            width: 400px;
+            height: 400px;
+            background: #00d4ff;
+            top: -100px;
+            left: -100px;
+
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .g2 {
+            width: 350px;
+            height: 350px;
+            background: #7c3aed;
+            bottom: -100px;
+            right: -100px;
+
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* ======================
+           CONTENT
+        ====================== */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px 120px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 26px;
+
+            padding: 34px;
+
+            backdrop-filter: blur(18px);
+
+            transition: 0.35s;
+        }
+
+        .section:hover {
+            transform: translateY(-4px);
+
+            border-color: rgba(0,212,255,0.35);
+
+            box-shadow: 0 15px 40px rgba(0,212,255,0.08);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 0;
+
+            margin-bottom: 25px;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        /* ======================
+           GRID
+        ====================== */
+
+        .grid {
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 18px;
+        }
+
+        .card {
+            padding: 20px;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,0.03);
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+
+            border-color: rgba(0,212,255,0.35);
+        }
+
+        /* ======================
+           SKILLS
+        ====================== */
+
+        .skill {
+            margin: 18px 0;
+        }
+
+        .bar {
+            margin-top: 8px;
+
+            height: 6px;
+
+            background: rgba(255,255,255,0.08);
+
+            border-radius: 999px;
+
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 100%;
+
+            background: linear-gradient(90deg,
+                    var(--accent),
+                    var(--accent2));
+
+            border-radius: 999px;
+        }
+
+        /* ======================
+           CONTACT
+        ====================== */
+
+        .socials {
+            display: flex;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .socials a {
+            color: var(--accent);
+            font-size: 22px;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ======================
+           REVEAL ANIMATIONS
+        ====================== */
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+
+            transition:
+                opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ======================
+           MOBILE
+        ====================== */
+
+        @media(max-width: 900px) {
+
+            .navbar {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<header>
-    <img src="https://via.placeholder.com/150" class="profile-img">
-    <h1>Medical AI Researcher</h1>
-    <p class="muted">Multimodal AI • Medical Imaging • Clinical Intelligence Systems</p>
-</header>
+    <!-- NAVBAR -->
 
-<div class="container">
+    <nav class="navbar">
 
-<!-- ABOUT -->
-<div class="section">
-    <h2><i class="fas fa-user"></i> About Me</h2>
-    <p>
-        Medical student working at the intersection of artificial intelligence and clinical medicine,
-        focused on multimodal AI systems for healthcare.
-    </p>
-</div>
-
-<!-- WHAT IM DOING -->
-<div class="section">
-    <h2><i class="fas fa-brain"></i> What I'm Doing</h2>
-
-    <div class="grid">
-        <div class="card">
-            <b>Medical Imaging AI</b>
-            <p>Deep learning models for radiology diagnostics.</p>
+        <div class="brand">
+            <img src="logo.png" class="logo">
+            <span>Nxco-ch</span>
         </div>
 
-        <div class="card">
-            <b>Multimodal AI</b>
-            <p>Vision + language models for clinical reasoning.</p>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#doing">Research</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
         </div>
 
-        <div class="card">
-            <b>Hospital Research</b>
-            <p>Real-world AI deployment in healthcare systems.</p>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="glow g1"></div>
+        <div class="glow g2"></div>
+
+        <div class="hero-content">
+
+            <div class="badge">
+                MULTIMODAL AI × MEDICINE
+            </div>
+
+            <h1>
+                Building the future of
+                <span>Clinical Intelligence</span>
+            </h1>
+
+            <p>
+                Medical student and AI researcher focused on multimodal systems,
+                medical imaging, and next-generation healthcare interfaces.
+            </p>
+
+            <div class="buttons">
+
+                <button class="btn-primary">
+                    Explore Research
+                </button>
+
+                <button class="btn-secondary">
+                    Contact
+                </button>
+
+            </div>
+
         </div>
+
+    </section>
+
+    <!-- CONTENT -->
+
+    <div class="container">
+
+        <!-- ABOUT -->
+
+        <section class="section" id="about">
+
+            <h2>About Me</h2>
+
+            <p class="muted">
+                Medical student working at the intersection of artificial intelligence
+                and clinical medicine, with a focus on multimodal AI systems for healthcare.
+            </p>
+
+        </section>
+
+        <!-- WHAT IM DOING -->
+
+        <section class="section" id="doing">
+
+            <h2>What I'm Doing</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>Medical Imaging AI</h3>
+                    <p class="muted">
+                        Deep learning systems for radiology and diagnostics.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Multimodal AI</h3>
+                    <p class="muted">
+                        Vision-language systems for clinical reasoning.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Hospital Research</h3>
+                    <p class="muted">
+                        Clinical integration of AI systems in healthcare.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NEWS -->
+
+        <section class="section">
+
+            <h2>News</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    MRI segmentation project ongoing
+                </div>
+
+                <div class="card">
+                    New hospital collaboration
+                </div>
+
+                <div class="card">
+                    Multimodal AI paper in progress
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- EDUCATION -->
+
+        <section class="section">
+
+            <h2>Education</h2>
+
+            <div class="card">
+                Medical School — Strasbourg
+            </div>
+
+        </section>
+
+        <!-- WORK -->
+
+        <section class="section">
+
+            <h2>Work & Research Experience</h2>
+
+            <div class="card">
+                AI Research Intern — Hospital Lab
+            </div>
+
+        </section>
+
+        <!-- SKILLS -->
+
+        <section class="section" id="skills">
+
+            <h2>Skills</h2>
+
+            <div class="skill">
+                Python
+                <div class="bar">
+                    <div class="fill" style="width:90%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                Deep Learning
+                <div class="bar">
+                    <div class="fill" style="width:85%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                Medical Imaging
+                <div class="bar">
+                    <div class="fill" style="width:75%"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- PUBLICATIONS -->
+
+        <section class="section">
+
+            <h2>Publications</h2>
+
+            <p class="muted">
+                Coming soon...
+            </p>
+
+        </section>
+
+        <!-- CONTACT -->
+
+        <section class="section" id="contact">
+
+            <h2>Contact</h2>
+
+            <p class="muted">
+                📍 Strasbourg, France
+            </p>
+
+            <div class="socials">
+
+                <a href="#">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+            </div>
+
+        </section>
+
     </div>
-</div>
 
-<!-- NEWS -->
-<div class="section">
-    <h2><i class="fas fa-bolt"></i> News</h2>
-
-    <div class="card">Working on MRI segmentation model</div>
-    <div class="card">Hospital research collaboration ongoing</div>
-    <div class="card">Writing paper on multimodal diagnosis</div>
-</div>
-
-<!-- EDUCATION -->
-<div class="section">
-    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-
-    <div class="card">Medical School – Strasbourg</div>
-    <div class="card">AI / Deep Learning specialization</div>
-</div>
-
-<!-- WORK -->
-<div class="section">
-    <h2><i class="fas fa-briefcase"></i> Work & Research Experience</h2>
-
-    <div class="card">AI Research Intern – Hospital Lab</div>
-</div>
-
-<!-- SKILLS -->
-<div class="section">
-    <h2><i class="fas fa-code"></i> Skills</h2>
-
-    <div class="skill">
-        Python
-        <div class="bar"><div style="width:90%"></div></div>
-    </div>
-
-    <div class="skill">
-        Deep Learning
-        <div class="bar"><div style="width:85%"></div></div>
-    </div>
-
-    <div class="skill">
-        Medical Imaging
-        <div class="bar"><div style="width:75%"></div></div>
-    </div>
-</div>
-
-<!-- PUBLICATIONS -->
-<div class="section">
-    <h2><i class="fas fa-book"></i> Publications</h2>
-    <p class="muted">Coming soon...</p>
-</div>
-
-<!-- CONTACT -->
-<div class="section contact">
-    <h2><i class="fas fa-envelope"></i> Contact</h2>
-
-    <p>📍 Strasbourg, France</p>
-
-    <div class="social">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fas fa-envelope"></i></a>
-    </div>
-</div>
-
-</div>
+    <script src="app.js"></script>
 
 </body>
 </html>
