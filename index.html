@@ -547,67 +547,32 @@
                CONTACT SECTION
             ====================== */
             
-            .contact-section {
-                padding: 40px;
-            }
-            
             .contact-grid {
                 display: grid;
-                grid-template-columns: 340px 1fr;
+                grid-template-columns: 320px 1fr;
                 gap: 30px;
-            
                 align-items: start;
             }
             
-            .contact-info {
-                text-align: center;
-            
-                background: rgba(255,255,255,0.03);
-            
-                border: 1px solid rgba(255,255,255,0.08);
-            
-                border-radius: 24px;
-            
-                padding: 30px;
-            }
-            
-            .contact-profile {
-                width: 130px;
-                height: 130px;
-            
+            .large-profile {
+                width: 140px;
+                height: 140px;
                 border-radius: 50%;
-            
                 object-fit: cover;
-            
-                margin-bottom: 20px;
-            
-                border: 2px solid rgba(0,212,255,0.3);
             }
             
             .center {
                 text-align: center;
             }
             
-            .contact-details {
-                margin-top: 25px;
-            }
-            
-            .contact-details div {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            
-                gap: 12px;
-            
-                margin-bottom: 16px;
-            
-                color: var(--muted);
-            }
-            
             .centered-socials {
                 justify-content: center;
+                margin-top: 20px;
+            }
             
-                margin-top: 25px;
+            .contact-info {
+                text-align: center;
+                padding: 26px;
             }
         }
     </style>
@@ -691,13 +656,6 @@
                 Medical student and AI researcher working at the intersection of
                 <b>clinical decision-making</b>, <b>surgical intelligence</b>, and
                 <b>multimodal machine learning</b>.
-            </p>
-            
-            <p>
-                My work focuses on building AI systems capable of understanding
-                complex medical environments — from surgical videos to clinical reasoning —
-                with the goal of enhancing safety, precision, and real-time decision support
-                in healthcare.
             </p>
 
             <div class="buttons">
@@ -1224,18 +1182,18 @@
                             <span class="tag">Endoscopic Surgery</span>
                             <span class="tag">Real-time AI</span>
                             <span class="tag">Clinical Decision Support</span>
-                
+                            <span class="tag">
+                                <a href="https://eaes.eu/wp-content/uploads/2025/06/EAES-scientific-programme-EAES-Belgrade-2025-for-WEBSITE-published-13-06-2025.pdf"
+                                   class="paper-link"
+                                   target="_blank">
+                                    <i class="fas fa-file"></i>
+                                    Congress Program
+                            
+                                </a>
+                            </span>
                         </div>
                 
-                        <!-- LINK -->
-                        <a href="https://eaes.eu/wp-content/uploads/2025/06/EAES-scientific-programme-EAES-Belgrade-2025-for-WEBSITE-published-13-06-2025.pdf"
-                           class="paper-link"
-                           target="_blank">
-                
-                            <i class="fas fa-file"></i>
-                            Congress Program
-                
-                        </a>
+                        
                 
                     </div>
                 </div>
@@ -1282,17 +1240,17 @@
                             <span class="tag">Video Understanding</span>
                             <span class="tag">Multimodal Learning</span>
                             <span class="tag">Vision-Language</span>
+                            <span class="tag">
+                                <a href="https://arxiv.org/pdf/2603.29962f"
+                                   class="paper-link"
+                                   target="_blank">
+                                    <i class="fas fa-file"></i>
+                                    Read Paper
+                            
+                                </a>
+                            </span>
             
                         </div>
-            
-                        <a href="https://arxiv.org/pdf/2603.29962"
-                           class="paper-link"
-                           target="_blank">
-            
-                            <i class="fas fa-file"></i>
-                            Read Paper
-            
-                        </a>
             
                     </div>
             
@@ -1328,17 +1286,17 @@
                             <span class="tag">Clinical Protocols</span>
                             <span class="tag">Gynecologic Oncology</span>
                             <span class="tag">Decision Support</span>
+                            <span class="tag">
+                                <a href="https://www.international-journal-of-gynecological-cancer.com/article/S1048-891X(25)02178-4/abstract"
+                                   class="paper-link"
+                                   target="_blank">
+                                    <i class="fas fa-file"></i>
+                                    Read Paper
+                            
+                                </a>
+                            </span>
             
                         </div>
-            
-                        <a href="https://www.international-journal-of-gynecological-cancer.com/article/S1048-891X(25)02178-4/abstract"
-                           class="paper-link"
-                           target="_blank">
-            
-                            <i class="fas fa-file"></i>
-                            Read Paper
-            
-                        </a>
             
                     </div>
             
@@ -1348,7 +1306,7 @@
 
         <!-- CONTACT -->
         <section class="section contact-section" id="contact">
-
+        
             <h2>
                 <i class="fas fa-envelope"></i>
                 Contact
@@ -1356,14 +1314,15 @@
         
             <div class="contact-grid">
         
+                <!-- ================= LEFT COLUMN ================= -->
                 <div class="contact-info">
         
                     <img src="profile.jpg" class="contact-profile large-profile">
         
-                    <h3>Nicolas CHANEL</h3>
+                    <h3>Nicolas Chanel</h3>
         
                     <p class="muted center">
-                        Medical Student • AI Researcher
+                        Medical Student · AI Researcher · Multimodal Systems
                     </p>
         
                     <div class="contact-details">
@@ -1386,12 +1345,12 @@
                             <i class="fab fa-github"></i>
                         </a>
         
-                        <a href="www.linkedin.com/in/nicolas-chanel-82879a250" target="_blank">
+                        <a href="https://www.linkedin.com/in/nicolas-chanel-82879a250" target="_blank">
                             <i class="fab fa-linkedin"></i>
                         </a>
         
-                        <a href="hhttps://orcid.org/0009-0003-6837-1270" target="_blank">
-                            <i class="fab fa-orcid"></i>
+                        <a href="https://orcid.org/0009-0003-6837-1270" target="_blank">
+                            <i class="fas fa-id-badge"></i>
                         </a>
         
                         <a href="https://scholar.google.com/citations?hl=fr&user=3Bn0b5IAAAAJ" target="_blank">
@@ -1403,29 +1362,33 @@
                         </a>
         
                         <a href="https://www.researchgate.net/profile/Nicolas-Chanel" target="_blank">
-                            <i class="fab fa-researchgate"></i>
+                            <i class="fas fa-flask"></i>
                         </a>
         
                     </div>
         
                 </div>
         
+                <!-- ================= RIGHT COLUMN ================= -->
                 <div>
         
+                    <!-- MAP -->
                     <iframe
                         class="map"
                         src="https://maps.google.com/maps?q=strasbourg&t=&z=11&ie=UTF8&iwloc=&output=embed">
                     </iframe>
         
+                    <!-- FORM -->
                     <form class="contact-form">
         
                         <input type="text" placeholder="Your Name">
         
                         <input type="email" placeholder="Your Email">
         
-                        <textarea rows="5" placeholder="Your Message"></textarea>
+                        <textarea rows="6" placeholder="Your Message"></textarea>
         
                         <button type="submit" class="btn-primary form-btn">
+                            <i class="fas fa-paper-plane"></i>
                             Send Message
                         </button>
         
