@@ -201,3 +201,26 @@ window.addEventListener("resize", () => {
     canvas.height = window.innerHeight;
     init();
 });
+
+const reveals = document.querySelectorAll(".hero-title, .hero-subtitle, .badge");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.3 });
+
+reveals.forEach(el => {
+    el.classList.add("reveal");
+    observer.observe(el);
+});
+
+window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    document.querySelectorAll(".section").forEach((sec, i) => {
+        sec.style.transform = `translateY(${scrollY * 0.02 * (i % 2 ? 1 : -1)}px)`;
+    });
+});
