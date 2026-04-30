@@ -995,6 +995,60 @@
                     margin: 15px 10px;
                 }
             }
+
+
+            @media (max-width: 768px) {
+            
+                html, body {
+                    overflow-x: hidden;
+                }
+            
+                section {
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    transform: none !important;
+                }
+
+            }
+            @media (max-width: 768px) {
+
+                .section {
+                    display: block !important;
+                    height: auto !important;
+                    min-height: unset !important;
+                }
+            
+                .grid {
+                    display: grid !important;
+                    grid-template-columns: 1fr !important;
+                }
+            
+            }
+
+            @media (max-width: 768px) {
+            
+                .contact-grid {
+                    display: block !important;
+                }
+            
+                .contact-card,
+                .contact-right {
+                    width: 100% !important;
+                }
+            
+                .map {
+                    width: 100% !important;
+                    height: 220px;
+                }
+            
+                .contact-form input,
+                .contact-form textarea {
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+            
+            }
         }
     </style>
 </head>
