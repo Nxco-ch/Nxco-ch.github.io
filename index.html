@@ -140,55 +140,62 @@
         
         .hero {
             min-height: 100vh;
+        
             display: flex;
             align-items: center;
             justify-content: center;
         
             text-align: center;
-            padding: 120px 20px;
+        
+            padding: 140px 20px;
         }
         
-        .hero h1 {
-            font-size: 72px;
-            line-height: 1;
-            margin: 0;
-            letter-spacing: -2px;
+        .hero-content {
+            max-width: 850px;
+        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        
+            gap: 26px; /* 🔥 IMPORTANT: spacing global propre */
         }
         
-        .hero h1 span {
-            background: linear-gradient(90deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .hero p {
-            margin-top: 20px;
-            font-size: 18px;
-            color: var(--muted);
-        }
-
+        /* TITLE */
         .hero-title {
-
             font-size: 78px;
-        
             line-height: 0.95;
         
-            margin-top: 20px;
-        
-            margin-bottom: 35px;
-        
+            margin: 0;
         }
         
+        /* SUBTITLE */
         .hero-subtitle {
-        
-            margin-top: 10px;
-        
             font-size: 18px;
-        
             color: var(--muted);
         
             line-height: 1.7;
         
+            max-width: 720px;
+        }
+        
+        /* BUTTONS */
+        .buttons {
+            display: flex;
+            gap: 16px;
+        
+            margin-top: 10px;
+        }
+        
+        /* LOGO */
+        .hero-logo img {
+            width: 120px;
+            height: 120px;
+        
+            border-radius: 22px;
+        
+            margin-top: 10px;
+        
+            box-shadow: 0 20px 40px rgba(0,212,255,0.15);
         }
         
         /* ======================
@@ -832,46 +839,45 @@
 
     <section class="hero" id="top">
 
-        <div class="badge">
-            <i class="fas fa-brain"></i>
-            MULTIMODAL AI × CLINICAL MEDICINE × SURGICAL INTELLIGENCE
-        </div>
-        
-        <h1 class="hero-title">
-            Bridging<br>
-            Medicine &amp; Artificial Intelligence
-        </h1>
-        
-        <p class="hero-subtitle">
-            Medical student and AI researcher working at the intersection of
-            <b>clinical decision-making</b>, <b>surgical intelligence</b>, and
-            <b>multimodal machine learning</b>.
-        </p>
-
+        <div class="hero-content">
+    
+            <div class="badge">
+                <i class="fas fa-brain"></i>
+                MULTIMODAL AI × CLINICAL MEDICINE × SURGICAL INTELLIGENCE
+            </div>
+    
+            <h1 class="hero-title">
+                Bridging<br>
+                Medicine &amp; Artificial Intelligence
+            </h1>
+    
+            <p class="hero-subtitle">
+                Medical student and AI researcher working at the intersection of
+                <b>clinical decision-making</b>, <b>surgical intelligence</b>, and
+                <b>multimodal machine learning</b>.
+            </p>
+    
             <div class="buttons">
-
+    
                 <a href="#doing" class="btn-primary">
                     <i class="fas fa-brain"></i>
                     Explore Research
                 </a>
-            
+    
                 <a href="#contact" class="btn-secondary">
                     <i class="fas fa-envelope"></i>
                     Contact
                 </a>
-            
+    
             </div>
-        
-            <!-- ===================== LOGO SPACE ===================== -->
-        
-            <div class="about-logo">
-        
+    
+            <!-- LOGO (SEPARATE BLOCK) -->
+            <div class="hero-logo">
                 <img src="logo.png" alt="Nxco-ch Logo">
-        
             </div>
-
+    
         </div>
-
+    
     </section>
 
     <!-- CONTENT -->
