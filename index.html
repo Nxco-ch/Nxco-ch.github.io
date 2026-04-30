@@ -1,166 +1,248 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Médical | Innovation & Santé</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #0077b6; /* Bleu médical */
-            --secondary-color: #00b4d8; /* Bleu clair */
-            --bg-color: #f8f9fa;
-            --text-dark: #2d3436;
-            --white: #ffffff;
-            --border-color: #d1d8e0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical AI Portfolio</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        /* En-tête / Hero Section */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+<style>
+/* =======================
+   DARK MEDICAL AI STYLE
+======================= */
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid white;
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
+:root {
+    --bg: #05070f;
+    --card: rgba(255,255,255,0.05);
+    --text: #eaeef5;
+    --muted: #8a93a5;
+    --accent: #00d4ff;
+    --accent2: #7c3aed;
+}
 
-        /* Container Principal */
-        .container {
-            max-width: 900px;
-            margin: -50px auto 50px;
-            padding: 20px;
-        }
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
 
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
+/* HERO */
+header {
+    background: radial-gradient(circle at top, #0b1220, #05070f);
+    text-align: center;
+    padding: 80px 20px;
+}
 
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    object-fit: cover;
+    margin-bottom: 20px;
+}
 
-        h2 i {
-            margin-right: 15px;
-        }
+/* CONTAINER */
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 20px;
+}
 
-        /* Grille de projets */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+/* SECTION CARD */
+.section {
+    margin: 40px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    transition: 0.3s;
+}
 
-        .project-item {
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            transition: transform 0.3s ease;
-            background-color: #fff;
-        }
+.section:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
 
-        .project-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-        }
+/* TITLES */
+h2 {
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
 
-        .tag {
-            display: inline-block;
-            background: #e1f5fe;
-            color: var(--primary-color);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
-            margin-top: 10px;
-        }
+h1 {
+    font-size: 40px;
+    margin: 10px 0;
+}
 
-        /* Footer / Contact */
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #636e72;
-        }
+.muted {
+    color: var(--muted);
+}
 
-        .social-links a {
-            color: var(--primary-color);
-            font-size: 1.5em;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-    </style>
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+}
+
+/* CARD */
+.card {
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* WHAT IM DOING */
+.card b {
+    color: white;
+}
+
+/* SKILLS */
+.skill {
+    margin: 10px 0;
+}
+
+.bar {
+    height: 6px;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar div {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+.social a {
+    color: var(--accent);
+    font-size: 20px;
+    margin: 0 10px;
+}
+</style>
+
 </head>
+
 <body>
 
-    <header>
-        <img src="https://via.placeholder.com/150" alt="Avatar" class="profile-img">
-        <h1>Dr. Jean Dupont</h1>
-        <p>Expert en Data Science Médicale & Recherche Clinique</p>
-    </header>
+<!-- HERO -->
+<header>
+    <img src="https://via.placeholder.com/150" class="profile-img">
+    <h1>Medical AI Researcher</h1>
+    <p class="muted">Multimodal AI • Medical Imaging • Clinical Intelligence Systems</p>
+</header>
 
-    <div class="container">
-        
-        <section class="card">
-            <h2><i class="fas fa-user-md"></i> À propos</h2>
-            <p>Spécialisé dans l'analyse de données de santé, je développe des outils numériques pour faciliter le diagnostic et le suivi des patients. Mon approche combine rigueur scientifique et technologies modernes.</p>
-        </section>
+<div class="container">
 
-        <section class="card">
-            <h2><i class="fas fa-microscope"></i> Projets & Recherches</h2>
-            <div class="grid">
-                <div class="project-item">
-                    <h3>Analyse IRM Automatisée</h3>
-                    <p>Algorithme de détection précoce des anomalies par deep learning.</p>
-                    <span class="tag">Python</span> <span class="tag">AI</span>
-                </div>
-                <div class="project-item">
-                    <h3>Dashboard Patient</h3>
-                    <p>Interface de visualisation en temps réel des constantes vitales.</p>
-                    <span class="tag">React</span> <span class="tag">Santé</span>
-                </div>
-                <div class="project-item">
-                    <h3>Gestion de Cabinet</h3>
-                    <p>Système de gestion sécurisé des dossiers médicaux partagés.</p>
-                    <span class="tag">Cloud</span> <span class="tag">Securité</span>
-                </div>
-            </div>
-        </section>
+<!-- ABOUT -->
+<div class="section">
+    <h2><i class="fas fa-user"></i> About Me</h2>
+    <p>
+        Medical student working at the intersection of artificial intelligence and clinical medicine,
+        focused on multimodal AI systems for healthcare.
+    </p>
+</div>
 
+<!-- WHAT IM DOING -->
+<div class="section">
+    <h2><i class="fas fa-brain"></i> What I'm Doing</h2>
+
+    <div class="grid">
+        <div class="card">
+            <b>Medical Imaging AI</b>
+            <p>Deep learning models for radiology diagnostics.</p>
+        </div>
+
+        <div class="card">
+            <b>Multimodal AI</b>
+            <p>Vision + language models for clinical reasoning.</p>
+        </div>
+
+        <div class="card">
+            <b>Hospital Research</b>
+            <p>Real-world AI deployment in healthcare systems.</p>
+        </div>
+    </div>
+</div>
+
+<!-- NEWS -->
+<div class="section">
+    <h2><i class="fas fa-bolt"></i> News</h2>
+
+    <div class="card">Working on MRI segmentation model</div>
+    <div class="card">Hospital research collaboration ongoing</div>
+    <div class="card">Writing paper on multimodal diagnosis</div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+
+    <div class="card">Medical School – Strasbourg</div>
+    <div class="card">AI / Deep Learning specialization</div>
+</div>
+
+<!-- WORK -->
+<div class="section">
+    <h2><i class="fas fa-briefcase"></i> Work & Research Experience</h2>
+
+    <div class="card">AI Research Intern – Hospital Lab</div>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+    <h2><i class="fas fa-code"></i> Skills</h2>
+
+    <div class="skill">
+        Python
+        <div class="bar"><div style="width:90%"></div></div>
     </div>
 
-    <footer>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p>© 2023 - Portfolio Médical - Créé avec GitHub Pages</p>
-    </footer>
+    <div class="skill">
+        Deep Learning
+        <div class="bar"><div style="width:85%"></div></div>
+    </div>
+
+    <div class="skill">
+        Medical Imaging
+        <div class="bar"><div style="width:75%"></div></div>
+    </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="section">
+    <h2><i class="fas fa-book"></i> Publications</h2>
+    <p class="muted">Coming soon...</p>
+</div>
+
+<!-- CONTACT -->
+<div class="section contact">
+    <h2><i class="fas fa-envelope"></i> Contact</h2>
+
+    <p>📍 Strasbourg, France</p>
+
+    <div class="social">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+</div>
+
+</div>
 
 </body>
 </html>
