@@ -394,6 +394,56 @@
         }
         
         /* ======================
+           TIMELINE
+        ====================== */
+
+        .timeline {
+            position: relative;
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+        
+            left: 6px;
+            top: 0;
+            bottom: 0;
+        
+            width: 2px;
+        
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 26px;
+        
+            padding-left: 26px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+        
+            left: 0;
+            top: 6px;
+        
+            width: 12px;
+            height: 12px;
+        
+            border-radius: 50%;
+        
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+        
+            box-shadow: 0 0 0 4px rgba(0,212,255,0.08);
+        }
+        
+        .timeline-content h3 {
+            margin: 0;
+        }
+        
+        /* ======================
            RESPONSIVE FIX
         ====================== */
         
@@ -750,30 +800,6 @@
             
             </div>
 
-        <!-- NEWS -->
-
-        <section class="section">
-
-            <h2>News</h2>
-
-            <div class="grid">
-
-                <div class="card">
-                    MRI segmentation project ongoing
-                </div>
-
-                <div class="card">
-                    New hospital collaboration
-                </div>
-
-                <div class="card">
-                    Multimodal AI paper in progress
-                </div>
-
-            </div>
-
-        </section>
-
         <!-- EDUCATION -->
 
         <section class="section">
@@ -782,59 +808,122 @@
                 <i class="fas fa-graduation-cap"></i>
                 Education
             </h2>
-        
+            
             <div class="timeline">
-        
+            
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-        
+            
                     <div class="timeline-content">
-                        <h3>Medical School — Strasbourg</h3>
-                        <p class="muted">2022 — Present</p>
+                        <h3>Master 2 HealthTech — Dual Degree Track</h3>
+                        <p class="muted">
+                            2025 — 2026 · University of Strasbourg · Télécom Physique Strasbourg
+                        </p>
                     </div>
                 </div>
-        
+            
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-        
+            
                     <div class="timeline-content">
-                        <h3>AI & Deep Learning Training</h3>
-                        <p class="muted">Medical imaging & multimodal systems</p>
+                        <h3>DFGSM3 + Master 1 (IMed / IRIV)</h3>
+                        <p class="muted">
+                            2024 — 2025 · University of Strasbourg · Télécom Physique Strasbourg
+                        </p>
                     </div>
                 </div>
-        
+            
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+            
+                    <div class="timeline-content">
+                        <h3>DFGSM2 — Dual Degree Medicine Program</h3>
+                        <p class="muted">
+                            2023 — 2024 · Faculty of Medicine · University of Strasbourg
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+            
+                    <div class="timeline-content">
+                        <h3>L1 Life Sciences for Health (SpS) + Psychology Track</h3>
+                        <p class="muted">
+                            2022 — 2023 · Faculty of Health Sciences & Psychology · University of Strasbourg
+                        </p>
+                    </div>
+                </div>
+            
             </div>
         
         </section>
         <!-- WORK -->
         
         <section class="section">
-        
-            <h2>
+                
+             <h2>
                 <i class="fas fa-briefcase"></i>
                 Work & Research Experience
             </h2>
-        
+            
             <div class="timeline">
-        
+            
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-        
+            
                     <div class="timeline-content">
-                        <h3>AI Research Intern — Hospital Lab</h3>
-                        <p class="muted">Clinical AI systems & radiology research</p>
+                        <h3>Research Internship — CAMMA Group (M2 HealthTech)</h3>
+                        <p class="muted">
+                            September 2025 — August 2026 · University of Strasbourg
+                        </p>
                     </div>
                 </div>
-        
+            
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-        
+            
                     <div class="timeline-content">
-                        <h3>Multimodal AI Research</h3>
-                        <p class="muted">Medical vision-language models</p>
+                        <h3>Research Assistant — CAMMA Group</h3>
+                        <p class="muted">
+                            August 2024 — June 2025 · Surgical AI Research
+                        </p>
                     </div>
                 </div>
-        
+            
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+            
+                    <div class="timeline-content">
+                        <h3>Conference Presentation — EAES 2025 (Belgrade)</h3>
+                        <p class="muted">
+                            27 June 2025 · European Association for Endoscopic Surgery
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+            
+                    <div class="timeline-content">
+                        <h3>Research Internship — CAMMA Group (M1)</h3>
+                        <p class="muted">
+                            July — August 2025 · Medical AI / Surgical Vision
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+            
+                    <div class="timeline-content">
+                        <h3>Research Internship — CAMMA Group (Dual Degree Program)</h3>
+                        <p class="muted">
+                            June — August 2024 · Surgical AI Foundations
+                        </p>
+                    </div>
+                </div>
+            
             </div>
         
         </section>
@@ -1131,7 +1220,7 @@
                             <i class="fab fa-linkedin"></i>
                         </a>
         
-                        <a href="https://github.com/TON_USERNAME" target="_blank">
+                        <a href="hhttps://orcid.org/0009-0003-6837-1270" target="_blank">
                             <i class="fab fa-orcid"></i>
                         </a>
         
