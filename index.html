@@ -249,6 +249,23 @@
             animation: gradientFlow 8s ease infinite;
         }
 
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .grad1, .grad2 {
+            filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.25))
+                    drop-shadow(0 0 20px rgba(124, 58, 237, 0.15));
+        }
+
         body {
             background:
                 radial-gradient(circle at top left, rgba(0, 212, 255, 0.18), transparent 35%),
