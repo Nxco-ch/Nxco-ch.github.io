@@ -912,6 +912,89 @@
                     transform: translate(0px, 0px) scale(1);
                 }
             }
+
+            @media (max-width: 768px) {
+            
+                /* ===== TYPO ===== */
+                .hero-title {
+                    font-size: 40px;
+                    line-height: 1.1;
+                }
+            
+                .hero-subtitle {
+                    font-size: 15px;
+                    padding: 0 10px;
+                }
+            
+                /* ===== NAV ===== */
+                .nav-links {
+                    display: none; /* simple clean mobile (tu peux remplacer par burger plus tard) */
+                }
+            
+                .navbar {
+                    padding: 16px 20px;
+                }
+            
+                /* ===== HERO ===== */
+                .hero-content {
+                    gap: 18px;
+                    padding: 0 10px;
+                }
+            
+                .buttons {
+                    flex-direction: column;
+                    width: 100%;
+                }
+            
+                .btn-primary,
+                .btn-secondary {
+                    width: 100%;
+                    justify-content: center;
+                }
+            
+                /* ===== LOGO ===== */
+                .hero-logo img {
+                    width: 90px;
+                    height: 90px;
+                }
+            
+                /* ===== GRIDS ===== */
+                .grid {
+                    grid-template-columns: 1fr !important;
+                }
+            
+                /* ===== CONTACT ===== */
+                .contact-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            
+                .contact-card {
+                    margin-bottom: 20px;
+                }
+            
+                /* ===== TIMELINE ===== */
+                .timeline {
+                    padding-left: 10px;
+                }
+            
+                .timeline-content {
+                    font-size: 14px;
+                }
+            
+                /* ===== BLOBS (IMPORTANT PERF MOBILE) ===== */
+                .blob {
+                    width: 220px;
+                    height: 220px;
+                    filter: blur(80px);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .section {
+                    padding: 20px;
+                    margin: 15px 10px;
+                }
+            }
         }
     </style>
 </head>
