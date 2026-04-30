@@ -80,3 +80,43 @@ window.addEventListener('scroll', () => {
     }
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // =========================
+    // CINEMATIC SECTION REVEAL
+    // =========================
+
+    const sections = document.querySelectorAll(".section");
+
+    const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    sections.forEach(sec => sectionObserver.observe(sec));
+
+    // =========================
+    // TIMELINE ANIMATION
+    // =========================
+
+    const items = document.querySelectorAll(".timeline-item");
+
+    const timelineObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    items.forEach(item => timelineObserver.observe(item));
+
+});
