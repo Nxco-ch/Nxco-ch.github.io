@@ -825,37 +825,11 @@
             .navbar {
                 padding: 18px;
             }
-            
-            #neuralCanvas {
-                position: fixed;
-                top: 0;
-                left: 0;
-            
-                width: 100%;
-                height: 100%;
-            
-                z-index: 0;
-            
-                opacity: 0.35;
-            
-                pointer-events: none;
-            }
-            .reveal {
-                opacity: 0;
-                transform: translateY(20px);
-                transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-            }
-            
-            .reveal.show {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
 
 <body>
-<canvas id="neuralCanvas"></canvas>
 
     <!-- NAVBAR -->
 
@@ -934,20 +908,6 @@
                 <b>clinical decision-making</b>, <b>surgical intelligence</b>, and
                 <b>multimodal machine learning</b>.
             </p>
-    
-            <div class="buttons">
-    
-                <a href="#doing" class="btn-primary">
-                    <i class="fas fa-brain"></i>
-                    Explore Research
-                </a>
-    
-                <a href="#contact" class="btn-secondary">
-                    <i class="fas fa-envelope"></i>
-                    Contact
-                </a>
-    
-            </div>
     
             <!-- LOGO (SEPARATE BLOCK) -->
             <div class="hero-logo">
