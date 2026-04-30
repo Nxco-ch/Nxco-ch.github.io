@@ -105,6 +105,34 @@
             height: 40px;
             border-radius: 10px;
         }
+
+        .nav-links {
+            display: flex;
+            gap: 40px; /* PLUS ESPACÉ */
+        }
+        
+        .nav-links a {
+            position: relative;
+            padding: 6px 0;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+        
+            width: 0%;
+            height: 2px;
+        
+            background: var(--accent);
+        
+            transition: 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
         
         /* ======================
            HERO
@@ -137,6 +165,30 @@
             margin-top: 20px;
             font-size: 18px;
             color: var(--muted);
+        }
+
+        .hero-title {
+
+            font-size: 78px;
+        
+            line-height: 0.95;
+        
+            margin-top: 20px;
+        
+            margin-bottom: 35px;
+        
+        }
+        
+        .hero-subtitle {
+        
+            margin-top: 10px;
+        
+            font-size: 18px;
+        
+            color: var(--muted);
+        
+            line-height: 1.7;
+        
         }
         
         /* ======================
@@ -254,10 +306,10 @@
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(2, 1fr); /* FORCER 2 PAR LIGNE */
+            gap: 20px;
         }
-        
+                
         .card {
             padding: 20px;
         
@@ -273,6 +325,33 @@
         .card:hover {
             transform: translateY(-3px);
             border-color: rgba(0,212,255,0.3);
+        }
+
+        .card h3 {
+
+            font-size: 18px;
+        
+            margin-bottom: 12px;
+        
+        }
+
+        .card h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .card p {
+        
+            font-size: 15px;
+        
+            line-height: 1.6;
+        
+        }
+        
+        .card {
+        
+            padding: 24px;
+        
         }
         
         /* ======================
@@ -291,8 +370,6 @@
             background: rgba(255,255,255,0.03);
         
             border: 1px solid rgba(255,255,255,0.06);
-        
-            margin-bottom: 20px;
         }
         
         .publication-image,
@@ -305,6 +382,18 @@
             border-radius: 14px;
         
             flex-shrink: 0;
+        }
+        
+        .news-content h3 {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        
+        .news-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
         
         /* ======================
@@ -399,12 +488,12 @@
         }
         
         .about-logo img {
-            width: 90px;
-            height: 90px;
+            width: 140px;
+            height: 140px;
         
-            border-radius: 16px;
+            border-radius: 22px;
         
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(0,212,255,0.15);
         }
         
         /* ======================
@@ -549,30 +638,138 @@
             
             .contact-grid {
                 display: grid;
-                grid-template-columns: 320px 1fr;
+                grid-template-columns: 340px 1fr;
                 gap: 30px;
                 align-items: start;
             }
             
-            .large-profile {
+            /* LEFT CARD */
+            .contact-card {
+                text-align: center;
+            
+                padding: 26px;
+            
+                border-radius: 24px;
+            
+                background: rgba(255,255,255,0.03);
+            
+                border: 1px solid rgba(255,255,255,0.06);
+            
+                backdrop-filter: blur(12px);
+            }
+            
+            .contact-profile {
                 width: 140px;
                 height: 140px;
+            
                 border-radius: 50%;
+            
                 object-fit: cover;
+            
+                margin-bottom: 18px;
+            
+                border: 2px solid rgba(0,212,255,0.25);
             }
             
-            .center {
-                text-align: center;
-            }
-            
-            .centered-socials {
-                justify-content: center;
-                margin-top: 20px;
-            }
-            
+            /* INFO */
             .contact-info {
-                text-align: center;
-                padding: 26px;
+                margin-top: 18px;
+            }
+            
+            .info-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            
+                gap: 10px;
+            
+                margin-bottom: 12px;
+            
+                color: var(--muted);
+            }
+            
+            /* SOCIALS */
+            .socials {
+                display: flex;
+                justify-content: center;
+                gap: 14px;
+            
+                margin-top: 18px;
+            }
+            
+            .socials a {
+                width: 44px;
+                height: 44px;
+            
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            
+                border-radius: 12px;
+            
+                background: rgba(255,255,255,0.04);
+            
+                border: 1px solid rgba(255,255,255,0.08);
+            
+                transition: 0.3s;
+            }
+            
+            .socials a:hover {
+                transform: translateY(-3px);
+                border-color: rgba(0,212,255,0.3);
+            }
+            
+            /* RIGHT SIDE */
+            .contact-right {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+            }
+            
+            /* MAP */
+            .map {
+                width: 100%;
+                height: 280px;
+            
+                border: none;
+            
+                border-radius: 20px;
+            
+                filter: grayscale(1) contrast(1.1) brightness(0.8);
+            }
+            
+            /* FORM */
+            .contact-form {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+            }
+            
+            .contact-form input,
+            .contact-form textarea {
+                padding: 14px;
+            
+                border-radius: 14px;
+            
+                border: 1px solid rgba(255,255,255,0.08);
+            
+                background: rgba(255,255,255,0.03);
+            
+                color: white;
+            
+                outline: none;
+            }
+            
+            .contact-form input:focus,
+            .contact-form textarea:focus {
+                border-color: rgba(0,212,255,0.35);
+            }
+            
+            /* RESPONSIVE */
+            @media(max-width: 900px) {
+                .contact-grid {
+                    grid-template-columns: 1fr;
+                }
             }
         }
     </style>
@@ -635,28 +832,21 @@
 
     <section class="hero" id="top">
 
-        <div class="glow g1"></div>
-        <div class="glow g2"></div>
-
-        <div class="hero-content">
-
-            <div class="badge">
-                <i class="fas fa-brain"></i>
-                MULTIMODAL AI × CLINICAL MEDICINE × SURGICAL INTELLIGENCE
-            </div>
-            
-            <h1>
-                Bridging
-                <span>Medicine</span>
-                &amp;
-                <span>Artificial Intelligence</span>
-            </h1>
-            
-            <p>
-                Medical student and AI researcher working at the intersection of
-                <b>clinical decision-making</b>, <b>surgical intelligence</b>, and
-                <b>multimodal machine learning</b>.
-            </p>
+        <div class="badge">
+            <i class="fas fa-brain"></i>
+            MULTIMODAL AI × CLINICAL MEDICINE × SURGICAL INTELLIGENCE
+        </div>
+        
+        <h1 class="hero-title">
+            Bridging<br>
+            Medicine &amp; Artificial Intelligence
+        </h1>
+        
+        <p class="hero-subtitle">
+            Medical student and AI researcher working at the intersection of
+            <b>clinical decision-making</b>, <b>surgical intelligence</b>, and
+            <b>multimodal machine learning</b>.
+        </p>
 
             <div class="buttons">
 
@@ -670,6 +860,14 @@
                     Contact
                 </a>
             
+            </div>
+        
+            <!-- ===================== LOGO SPACE ===================== -->
+        
+            <div class="about-logo">
+        
+                <img src="logo.png" alt="Nxco-ch Logo">
+        
             </div>
 
         </div>
@@ -716,14 +914,6 @@
                 systems that improve surgical safety, enhance procedural understanding, and
                 bridge the gap between computational models and real-world medical practice.
             </p>
-        
-            <!-- ===================== LOGO SPACE ===================== -->
-        
-            <div class="about-logo">
-        
-                <img src="logo.png" alt="Nxco-ch Logo">
-        
-            </div>
         
             <!-- ===================== TAGS ===================== -->
         
@@ -1131,24 +1321,31 @@
                 </div>
         
                 <div class="news-card">
+                
                     <img src="esgo.png" class="news-image">
-                    <h3>
-                        Introducing Critical View of Safety for Minimally-Invasive Hysterectomy:
-                        From Delphi Consensus Towards AI Intraoperative Guidance
-                    </h3>
-                    <p class="muted">
-                        Co-author · Submitted to ESGO 2026 (37th European Congress of Gynaecological Oncology)
-                    </p>
-                    <!-- TAGS -->
-                    <div class="tags">
-                        <span class="tag">AI in Surgery</span>
-                        <span class="tag">Gynecologic Oncology</span>
-                        <span class="tag">Medical Imaging</span>
-                        <span class="tag">Clinical AI</span>
-                        <span class="tag">Decision Support</span>
+                
+                    <div class="news-content">
+                
+                        <h3>
+                            Introducing Critical View of Safety for Minimally-Invasive Hysterectomy:
+                            From Delphi Consensus Towards AI Intraoperative Guidance
+                        </h3>
+                
+                        <p class="muted">
+                            Co-author · Submitted to ESGO 2026 (37th European Congress of Gynaecological Oncology)
+                        </p>
+                
+                        <div class="tags">
+                            <span class="tag">AI in Surgery</span>
+                            <span class="tag">Gynecologic Oncology</span>
+                            <span class="tag">Medical Imaging</span>
+                            <span class="tag">Clinical AI</span>
+                            <span class="tag">Decision Support</span>
+                        </div>
+                
                     </div>
                 
-                </div>
+                </div>>
         
 
                 <div class="news-card">
@@ -1306,7 +1503,7 @@
 
         <!-- CONTACT -->
         <section class="section contact-section" id="contact">
-        
+
             <h2>
                 <i class="fas fa-envelope"></i>
                 Contact
@@ -1314,32 +1511,32 @@
         
             <div class="contact-grid">
         
-                <!-- ================= LEFT COLUMN ================= -->
-                <div class="contact-info">
+                <!-- ================= LEFT ================= -->
+                <div class="contact-card">
         
-                    <img src="profile.jpg" class="contact-profile large-profile">
+                    <img src="profile.jpg" class="contact-profile">
         
                     <h3>Nicolas Chanel</h3>
         
-                    <p class="muted center">
+                    <p class="muted">
                         Medical Student · AI Researcher · Multimodal Systems
                     </p>
         
-                    <div class="contact-details">
+                    <div class="contact-info">
         
-                        <div>
+                        <div class="info-item">
                             <i class="fas fa-location-dot"></i>
                             Strasbourg, France
                         </div>
         
-                        <div>
+                        <div class="info-item">
                             <i class="fas fa-envelope"></i>
                             nicolas.chanel33@gmail.com
                         </div>
         
                     </div>
         
-                    <div class="socials centered-socials">
+                    <div class="socials">
         
                         <a href="https://github.com/nxco-ch" target="_blank">
                             <i class="fab fa-github"></i>
@@ -1369,16 +1566,14 @@
         
                 </div>
         
-                <!-- ================= RIGHT COLUMN ================= -->
-                <div>
+                <!-- ================= RIGHT ================= -->
+                <div class="contact-right">
         
-                    <!-- MAP -->
                     <iframe
                         class="map"
                         src="https://maps.google.com/maps?q=strasbourg&t=&z=11&ie=UTF8&iwloc=&output=embed">
                     </iframe>
         
-                    <!-- FORM -->
                     <form class="contact-form">
         
                         <input type="text" placeholder="Your Name">
@@ -1387,7 +1582,7 @@
         
                         <textarea rows="6" placeholder="Your Message"></textarea>
         
-                        <button type="submit" class="btn-primary form-btn">
+                        <button class="btn-primary">
                             <i class="fas fa-paper-plane"></i>
                             Send Message
                         </button>
