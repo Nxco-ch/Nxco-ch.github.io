@@ -120,3 +120,19 @@ document.addEventListener("DOMContentLoaded", () => {
     items.forEach(item => timelineObserver.observe(item));
 
 });
+
+
+const reveals = document.querySelectorAll(".hero-title, .hero-subtitle, .badge");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.3 });
+
+reveals.forEach(el => {
+    el.classList.add("reveal");
+    observer.observe(el);
+});
