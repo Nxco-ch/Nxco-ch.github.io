@@ -52,7 +52,37 @@
             color: var(--text);
             overflow-x: hidden;
         }
+
+        .glow {
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(140px);
+            opacity: 0.35;
+            z-index: 0;
+        }
         
+        .g1 {
+            width: 420px;
+            height: 420px;
+            background: #00d4ff;
+            top: -120px;
+            left: -120px;
+            animation: float 10s ease-in-out infinite;
+        }
+        
+        .g2 {
+            width: 420px;
+            height: 420px;
+            background: #7c3aed;
+            bottom: -120px;
+            right: -120px;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
         /* ======================
            GLOBAL RESET
         ====================== */
@@ -197,7 +227,26 @@
         
             box-shadow: 0 20px 40px rgba(0,212,255,0.15);
         }
+
+        .grad1 {
+            background: linear-gradient(90deg, #00d4ff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         
+        .grad2 {
+            background: linear-gradient(90deg, #7c3aed, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(0, 212, 255, 0.18), transparent 35%),
+                radial-gradient(circle at top right, rgba(124, 58, 237, 0.18), transparent 40%),
+                radial-gradient(circle at bottom, rgba(236, 72, 153, 0.08), transparent 50%),
+                #05070f;
+        }
         /* ======================
            BADGE
         ====================== */
@@ -453,23 +502,23 @@
         }
         
         /* ======================
-           SOCIALS
+           SOCIALS SPACING
         ====================== */
         
         .socials {
             display: flex;
-            gap: 16px;
+            gap: 22px;
         }
         
         .socials a {
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
         
             display: flex;
             align-items: center;
             justify-content: center;
         
-            border-radius: 12px;
+            border-radius: 14px;
         
             background: rgba(255,255,255,0.04);
         
@@ -479,8 +528,137 @@
         }
         
         .socials a:hover {
-            transform: translateY(-3px);
-            border-color: rgba(0,212,255,0.3);
+            transform: translateY(-4px);
+        
+            border-color: rgba(0,212,255,0.35);
+        
+            background: rgba(255,255,255,0.08);
+        }
+        
+        /* ======================
+           CONTACT SECTION
+        ====================== */
+        
+        .contact-section {
+            padding: 40px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 30px;
+        
+            align-items: start;
+        }
+        
+        .contact-info {
+            text-align: center;
+        
+            background: rgba(255,255,255,0.03);
+        
+            border: 1px solid rgba(255,255,255,0.08);
+        
+            border-radius: 24px;
+        
+            padding: 30px;
+        }
+        
+        .contact-profile {
+            width: 130px;
+            height: 130px;
+        
+            border-radius: 50%;
+        
+            object-fit: cover;
+        
+            margin-bottom: 20px;
+        
+            border: 2px solid rgba(0,212,255,0.3);
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .contact-details {
+            margin-top: 25px;
+        }
+        
+        .contact-details div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            gap: 12px;
+        
+            margin-bottom: 16px;
+        
+            color: var(--muted);
+        }
+        
+        .centered-socials {
+            justify-content: center;
+        
+            margin-top: 25px;
+        }
+        
+        /* ======================
+           MAP
+        ====================== */
+        
+        .map {
+            width: 100%;
+            height: 280px;
+        
+            border: none;
+        
+            border-radius: 24px;
+        
+            margin-bottom: 24px;
+        
+            filter: grayscale(1) contrast(1.1) brightness(0.8);
+        }
+        
+        /* ======================
+           CONTACT FORM
+        ====================== */
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(255,255,255,0.04);
+        
+            border: 1px solid rgba(255,255,255,0.08);
+        
+            border-radius: 18px;
+        
+            padding: 16px;
+        
+            color: white;
+        
+            font-family: inherit;
+        
+            resize: none;
+        
+            outline: none;
+        
+            transition: 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: rgba(0,212,255,0.35);
+        
+            box-shadow: 0 0 0 4px rgba(0,212,255,0.08);
+        }
+        
+        .form-btn {
+            width: fit-content;
         }
         
         /* ======================
@@ -638,144 +816,19 @@
             .navbar {
                 padding: 18px;
             }
-        
-            /* ======================
-               CONTACT SECTION
-            ====================== */
             
-            .contact-grid {
-                display: grid;
-                grid-template-columns: 340px 1fr;
-                gap: 30px;
-                align-items: start;
-            }
+        /* RESPONSIVE */
+         @media(max-width: 900px) {
             
-            /* LEFT CARD */
-            .contact-card {
-                text-align: center;
-            
-                padding: 26px;
-            
-                border-radius: 24px;
-            
-                background: rgba(255,255,255,0.03);
-            
-                border: 1px solid rgba(255,255,255,0.06);
-            
-                backdrop-filter: blur(12px);
-            }
-            
-            .contact-profile {
-                width: 140px;
-                height: 140px;
-            
-                border-radius: 50%;
-            
-                object-fit: cover;
-            
-                margin-bottom: 18px;
-            
-                border: 2px solid rgba(0,212,255,0.25);
-            }
-            
-            /* INFO */
-            .contact-info {
-                margin-top: 18px;
-            }
-            
-            .info-item {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            
-                gap: 10px;
-            
-                margin-bottom: 12px;
-            
-                color: var(--muted);
-            }
-            
-            /* SOCIALS */
-            .socials {
-                display: flex;
-                justify-content: center;
-                gap: 14px;
-            
-                margin-top: 18px;
-            }
-            
-            .socials a {
-                width: 44px;
-                height: 44px;
-            
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            
-                border-radius: 12px;
-            
-                background: rgba(255,255,255,0.04);
-            
-                border: 1px solid rgba(255,255,255,0.08);
-            
-                transition: 0.3s;
-            }
-            
-            .socials a:hover {
-                transform: translateY(-3px);
-                border-color: rgba(0,212,255,0.3);
-            }
-            
-            /* RIGHT SIDE */
-            .contact-right {
-                display: flex;
-                flex-direction: column;
-                gap: 18px;
-            }
-            
-            /* MAP */
-            .map {
-                width: 100%;
-                height: 280px;
-            
-                border: none;
-            
-                border-radius: 20px;
-            
-                filter: grayscale(1) contrast(1.1) brightness(0.8);
-            }
-            
-            /* FORM */
-            .contact-form {
-                display: flex;
-                flex-direction: column;
-                gap: 14px;
-            }
-            
-            .contact-form input,
-            .contact-form textarea {
-                padding: 14px;
-            
-                border-radius: 14px;
-            
-                border: 1px solid rgba(255,255,255,0.08);
-            
-                background: rgba(255,255,255,0.03);
-            
-                color: white;
-            
-                outline: none;
-            }
-            
-            .contact-form input:focus,
-            .contact-form textarea:focus {
-                border-color: rgba(0,212,255,0.35);
-            }
-            
-            /* RESPONSIVE */
-            @media(max-width: 900px) {
-                .contact-grid {
-                    grid-template-columns: 1fr;
+                .publication-card,
+                .news-card {
+                    flex-direction: column;
+                }
+                
+                .publication-image,
+                .news-image {
+                    max-width: 100%;
+                    height: 180px;
                 }
             }
         }
@@ -840,6 +893,8 @@
     <section class="hero" id="top">
 
         <div class="hero-content">
+            <div class="glow g1"></div>
+            <div class="glow g2"></div>
     
             <div class="badge">
                 <i class="fas fa-brain"></i>
@@ -847,8 +902,12 @@
             </div>
     
             <h1 class="hero-title">
+
                 Bridging<br>
-                Medicine &amp; Artificial Intelligence
+                <span class="grad1">Medicine</span>
+                &amp;
+                <span class="grad2">Artificial Intelligence</span>
+            
             </h1>
     
             <p class="hero-subtitle">
@@ -1517,32 +1576,31 @@
         
             <div class="contact-grid">
         
-                <!-- ================= LEFT ================= -->
-                <div class="contact-card">
+                <div class="contact-info">
         
-                    <img src="profile.jpg" class="contact-profile">
+                    <img src="profile.jpg" class="contact-profile large-profile">
         
-                    <h3>Nicolas Chanel</h3>
+                    <h3>Nicolas CHANEL</h3>
         
-                    <p class="muted">
-                        Medical Student · AI Researcher · Multimodal Systems
+                    <p class="muted center">
+                         Medical Student · AI Researcher · Multimodal Systems
                     </p>
         
-                    <div class="contact-info">
+                    <div class="contact-details">
         
-                        <div class="info-item">
+                        <div>
                             <i class="fas fa-location-dot"></i>
                             Strasbourg, France
                         </div>
         
-                        <div class="info-item">
+                        <div>
                             <i class="fas fa-envelope"></i>
                             nicolas.chanel33@gmail.com
                         </div>
         
                     </div>
         
-                    <div class="socials">
+                   <div class="socials">
         
                         <a href="https://github.com/nxco-ch" target="_blank">
                             <i class="fab fa-github"></i>
@@ -1572,8 +1630,7 @@
         
                 </div>
         
-                <!-- ================= RIGHT ================= -->
-                <div class="contact-right">
+                <div>
         
                     <iframe
                         class="map"
@@ -1586,10 +1643,9 @@
         
                         <input type="email" placeholder="Your Email">
         
-                        <textarea rows="6" placeholder="Your Message"></textarea>
+                        <textarea rows="5" placeholder="Your Message"></textarea>
         
-                        <button class="btn-primary">
-                            <i class="fas fa-paper-plane"></i>
+                        <button type="submit" class="btn-primary form-btn">
                             Send Message
                         </button>
         
