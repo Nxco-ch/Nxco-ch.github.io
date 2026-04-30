@@ -842,12 +842,86 @@
             .navbar {
                 padding: 18px;
             }
+
+            .hero,
+            .section,
+            .navbar {
+                position: relative;
+                z-index: 2;
+            }
+            
+            .blobs {
+                z-index: 0;
+            }
+
+            .blobs {
+                position: fixed;
+                inset: 0;
+                z-index: 0;
+                pointer-events: none;
+                overflow: hidden;
+            }
+            
+            /* base blob */
+            .blob {
+                position: absolute;
+                width: 400px;
+                height: 400px;
+            
+                filter: blur(120px);
+                opacity: 0.35;
+            
+                border-radius: 50%;
+            
+                animation: floatBlob 12s infinite ease-in-out;
+            }
+            
+            /* colors */
+            .b1 {
+                background: #00d4ff;
+                top: 10%;
+                left: 15%;
+            }
+            
+            .b2 {
+                background: #7c3aed;
+                top: 60%;
+                left: 70%;
+                animation-delay: 2s;
+            }
+            
+            .b3 {
+                background: #ec4899;
+                top: 40%;
+                left: 30%;
+                animation-delay: 4s;
+            }
+            
+            /* movement */
+            @keyframes floatBlob {
+                0% {
+                    transform: translate(0px, 0px) scale(1);
+                }
+                33% {
+                    transform: translate(40px, -60px) scale(1.1);
+                }
+                66% {
+                    transform: translate(-50px, 40px) scale(0.95);
+                }
+                100% {
+                    transform: translate(0px, 0px) scale(1);
+                }
+            }
         }
     </style>
 </head>
 
 <body>
-
+    <div class="blobs">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    </div>
     <!-- NAVBAR -->
 
     <nav class="navbar">
